@@ -36,6 +36,7 @@ const FLY_CRAFT: Record<string, readonly [string, string]> = {
   chandra: ['winged', 'buildColumbiaFlying'],
   inspiration4: ['capsules-commercial', 'crew-dragon'],
   'polaris-dawn': ['capsules-commercial', 'crew-dragon'],
+  'crew-dragon-demo-2': ['capsules-commercial', 'crew-dragon'],
   ...Object.fromEntries(
     [1, 2, 3, 4, 5, 6, 7].map((n) => [`otv-${n}`, ['winged', 'x37b'] as const]),
   ),

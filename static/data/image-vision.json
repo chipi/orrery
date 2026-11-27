@@ -31477,6 +31477,45 @@
       "rejected_by": null,
       "scored_at": "2026-11-26T22:30:24.413Z",
       "scoring_cost_usd": 0
+    },
+    "/images/missions/crew-dragon-demo-2/01.jpg": {
+      "score": 8,
+      "subject": "A SpaceX Falcon 9 rocket and Crew Dragon spacecraft lifting off from Launch Complex 39A at Kennedy Space Center on the Demo-2 mission, 30 May 2020.",
+      "category": "launch",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.35
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T23:33:42.744Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/crew-dragon-demo-2/02.jpg": {
+      "score": 8,
+      "subject": "Crew Dragon Endeavour approaching the International Space Station over Turkey, photographed from the station on 31 May 2020.",
+      "category": "orbital",
+      "focal_point": {
+        "x": 0.25,
+        "y": 0.43
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T23:33:42.810Z",
+      "scoring_cost_usd": 0
+    },
+    "/images/missions/crew-dragon-demo-2/03.jpg": {
+      "score": 8,
+      "subject": "Crew Dragon Endeavour floating in the Gulf of Mexico off Pensacola, Florida, after splashdown on 2 August 2020, with recovery boats around it.",
+      "category": "spacecraft",
+      "focal_point": {
+        "x": 0.5,
+        "y": 0.5
+      },
+      "subject_match": true,
+      "rejected_by": null,
+      "scored_at": "2026-11-26T23:33:42.851Z",
+      "scoring_cost_usd": 0
     }
   }
 }

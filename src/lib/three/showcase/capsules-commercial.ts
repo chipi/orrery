@@ -304,7 +304,7 @@ function buildDragon2(crew: boolean): THREE.Group {
   const tr = grp(g, 'trunk');
   const tR = 1.9;
   cyl(tr, M.white, tR, tR - 0.03, 0, TRUNK, 56);
-  cyl(tr, M.silver, tR + 0.03, tR + 0.03, 0, 0.14, 56);
+  cyl(tr, M.silver, tR + 0.03, tR + 0.03, 0, 0.14, 56, true);
   cyl(tr, M.silver, tR + 0.02, tR + 0.02, TRUNK - 0.12, TRUNK, 56);
   const trR = (): number => tR - 0.015;
   for (const y of [0.9, 1.9, 2.9]) seamRing(tr, M.seam, trR, y, 0.008);
@@ -388,9 +388,32 @@ function buildDragon2(crew: boolean): THREE.Group {
     strut(cap, M.heatEdge, pol(0.1, a, -0.006), pol(1.85, a, -0.006), 0.006, 4);
   }
   torus(cap, M.heatEdge, 1.99, 0.022, 0.1, 72);
-  // Nose cone: black clamshell, hinge line, latches.
+  // Under the nose cone: the docking system (schematic): the adapter drum, the soft-capture ring
+  // with three guide petals, the docking hatch. `dockingPort` is the ring's face, on the axis.
+  cyl(cap, M.grey, 0.66, 0.7, 3.1, 3.42, 40);
+  cyl(cap, M.dark, 0.44, 0.44, 3.42, 3.44, 32);
+  torus(cap, M.silver, 0.62, 0.045, 3.5, 40);
+  for (let i = 0; i < 3; i++) {
+    const a = (i / 3) * TAU + Math.PI / 6;
+    strut(cap, M.silver, pol(0.66, a, 3.42), pol(0.62, a, 3.5), 0.03, 4);
+    const petal = grp(cap);
+    petal.position.copy(pol(0.6, a, 3.5));
+    petal.rotation.y = a + Math.PI / 2;
+    box(petal, M.silver, 0.3, 0.26, 0.03, 0, 0.11, 0.04);
+    petal.children[0].rotation.x = -0.35;
+  }
+  const port = new THREE.Object3D();
+  port.name = 'docking-port';
+  port.position.y = 3.5;
+  cap.add(port);
+  // Nose cone: black clamshell, hinge line, latches. It opens on a hinge at its base on the -z
+  // side (schematic: the side and the opening angle are not from a source).
+  const nose = grp(cap, 'nose-cone');
+  nose.position.set(0, 3.1, -1.02);
+  const noseIn = grp(nose);
+  noseIn.position.set(0, -3.1, 1.02);
   lathe(
-    cap,
+    noseIn,
     M.white,
     [
       [1.02, 3.1],
@@ -402,6 +425,20 @@ function buildDragon2(crew: boolean): THREE.Group {
     ],
     56,
   );
+  // Its inside, seen once it is open.
+  lathe(
+    noseIn,
+    mat(0xb9bab5, 0.05, 0.75, true),
+    [
+      [0.98, 3.1],
+      [0.96, 3.2],
+      [0.82, 3.65],
+      [0.57, 4.13],
+      [0.28, 4.39],
+      [0, 4.46],
+    ],
+    40,
+  );
   torus(cap, M.silver, 1.03, 0.03, 3.1, 56);
   const rNose = profileFn([
     [1.0, 3.2],
@@ -410,7 +447,7 @@ function buildDragon2(crew: boolean): THREE.Group {
   ]);
   for (const yaw of [Math.PI / 2, -Math.PI / 2]) {
     strut(
-      cap,
+      noseIn,
       M.silver,
       pol(rNose(3.3) + 0.006, yaw, 3.3),
       pol(rNose(4.1) + 0.006, yaw, 4.1),
@@ -473,7 +510,13 @@ function buildDragon2(crew: boolean): THREE.Group {
       for (const dx of [-0.08, 0.08]) bell(f, M.grey, M.black, 0.045, 0.1, dx, -0.1);
     }
   }
-  return finish(g, 8.1);
+  const out = finish(g, 8.1);
+  /** 0 shut (as launched and on entry), 1 open for docking. */
+  out.userData.setNoseOpen = (t: number): void => {
+    nose.rotation.x = -Math.min(1, Math.max(0, t)) * 0.62 * Math.PI;
+  };
+  out.userData.dockingPort = port;
+  return out;
 }
 
 /** A crinkled foil patch wrapped on a cylinder: arc a0 .. a0 + len, y0 .. y1. */

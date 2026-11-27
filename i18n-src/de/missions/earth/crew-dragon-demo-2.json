@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour mit 2 NASA-Astronauten: Douglas Hurley (Raumschiffkommandant) und Robert Behnken (Kommandant der gemeinsamen Einsätze)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TESTFLUG DES COMMERCIAL-CREW-PROGRAMMS · GEFLOGEN",
+  "first": "Der erste bemannte Flug der Crew Dragon und der erste bemannte Start in eine Umlaufbahn von den USA aus seit 2011",
+  "description": "Douglas Hurley und Robert Behnken flogen mit der ersten bemannten Crew Dragon, Endeavour, zur Internationalen Raumstation: der erste bemannte Start in eine Umlaufbahn von den USA aus seit dem letzten Shuttle-Flug 2011 und der erste bemannte Flug auf einem kommerziell gebauten und betriebenen Raumschiff. Eine Falcon 9 hob am 30. Mai 2020 um 19:22:45 UTC vom Launch Complex 39A ab, ihre erste Stufe landete auf dem Drohnenschiff Of Course I Still Love You. Am 31. Mai dockte Dragon selbstständig am vorderen Anschluss des Moduls Harmony an, nachdem Hurley während des Anflugs zweimal die Handsteuerung übernommen hatte, um den Flug mit Dragon über dessen Touchscreens zu testen: weicher Einfang um 14:16 UTC, harter Einfang um 14:27, Luke offen um 17:02. Hurley und Behnken gehörten 62 Tage lang zur Expedition 63. Sie koppelten am 1. August um 23:35 UTC ab und wasserten am 2. August um 18:48 UTC im Golf von Mexiko vor Pensacola, Florida, die erste Wasserung amerikanischer Astronauten seit 45 Jahren, nach 64 Tagen Flug.",
+  "events": [
+    {
+      "met": 0,
+      "label": "START",
+      "note": "Falcon 9 und Crew Dragon vom Launch Complex 39A, 30. Mai 2020, 19:22:45 UTC; die erste Stufe landete auf dem Drohnenschiff Of Course I Still Love You.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "ANFLUGZÜNDUNG",
+      "note": "Gegen 12:11 UTC am 31. Mai leitete eine Zündung von etwa 90 Sekunden nach fünf Phasierungszündungen den Anflug zur Station ein; die Uhrzeit ist aus einem Sekundärbericht umgerechnet.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "WEICHER EINFANG",
+      "note": "Dragon dockt um 14:16 UTC am Harmony-Anschluss an, 262 mi (421 km) hoch über der Grenze zwischen China und der Mongolei.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "HARTER EINFANG",
+      "note": "Zwölf Haken schließen sich um 14:27 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "LUKE OFFEN",
+      "note": "Hurley und Behnken öffnen um 17:02 UTC die Luke zur Station und gehören nun zur Expedition 63.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "ABKOPPELN",
+      "note": "Dragon koppelt am 1. August um 23:35 UTC selbstständig ab.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "WASSERUNG",
+      "note": "18:48 UTC am 2. August im Golf von Mexiko vor Pensacola; das SpaceX-Schiff GO Navigator nimmt die Besatzung auf.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Zweite Stufe der Falcon 9"
+}

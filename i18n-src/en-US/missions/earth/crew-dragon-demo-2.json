@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour with 2 NASA astronauts: Douglas Hurley (spacecraft commander) and Robert Behnken (joint operations commander)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "COMMERCIAL CREW TEST FLIGHT · FLOWN",
+  "first": "The first crewed Crew Dragon flight, and the first crewed orbital launch from the United States since 2011",
+  "description": "Douglas Hurley and Robert Behnken flew the first crewed Crew Dragon, Endeavour, to the International Space Station: the first crewed orbital launch from the United States since the last Shuttle flight in 2011, and the first crewed flight on a commercially built and operated spacecraft. A Falcon 9 lifted off from Launch Complex 39A on 30 May 2020 at 19:22:45 UTC, and its first stage landed on the drone ship Of Course I Still Love You. On 31 May Dragon docked autonomously at the forward port of the Harmony module, after Hurley twice took manual control during the approach to test flying Dragon from its touchscreens: soft capture at 14:16 UTC, hard capture at 14:27, hatch open at 17:02. Hurley and Behnken joined Expedition 63 for 62 days. They undocked at 23:35 UTC on 1 August and splashed down at 18:48 UTC on 2 August in the Gulf of Mexico off Pensacola, Florida, the first splashdown of American astronauts in 45 years, after 64 days in flight.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LAUNCH",
+      "note": "Falcon 9 and Crew Dragon from Launch Complex 39A, 30 May 2020, 19:22:45 UTC; the first stage landed on the drone ship Of Course I Still Love You.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "APPROACH BURN",
+      "note": "About 12:11 UTC on 31 May, a burn of about 90 seconds began the approach to the station, after five phasing burns; the time is converted from a secondary account.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "SOFT CAPTURE",
+      "note": "Dragon docks at the Harmony port at 14:16 UTC, 262 mi (421 km) up over the border of China and Mongolia.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "HARD CAPTURE",
+      "note": "Twelve hooks close at 14:27 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "HATCH OPEN",
+      "note": "Hurley and Behnken open the hatch to the station at 17:02 UTC and join Expedition 63.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "UNDOCKING",
+      "note": "Dragon undocks on its own at 23:35 UTC on 1 August.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "SPLASHDOWN",
+      "note": "18:48 UTC on 2 August in the Gulf of Mexico off Pensacola; the SpaceX ship GO Navigator picks up the crew.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 second stage"
+}

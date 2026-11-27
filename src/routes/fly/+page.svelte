@@ -192,6 +192,7 @@
     type ReturnProfile,
   } from '$lib/fly/return-profile';
   import type { AnyDeployProfile } from '$lib/fly/deploy-profile';
+  import type { DockingProfile } from '$lib/fly/docking-profile';
   import type { WingedProfile } from '$lib/fly/winged-profile';
   import { getEarthOrbitCoast } from '$lib/orbital/earth-orbit-registry';
   import { preloadFlyCraft } from '$lib/three/fly-craft';
@@ -676,16 +677,23 @@
   // The Shuttle deploy (W10): a mission that left from the payload bay (Galileo, Magellan,
   // Ulysses, Chandra on the IUS; Hubble and Compton off the arm) plays its deploy after the launch,
   // before the cruise or the Earth-orbit coast. Inside the launch act (no new act): its own scene
-  // and clock, the master clock paused; its end dispatches launchComplete.
-  let deployProfile = $state<AnyDeployProfile | null>(null);
+  // and clock, the master clock paused; its end dispatches launchComplete. A crewed docking (W9:
+  // Demo-2) takes the same slot, after the launch and before the Earth-orbit coast.
+  let deployProfile = $state<AnyDeployProfile | DockingProfile | null>(null);
   let deploying = $state(false);
   let deployDone = $state(false);
   // The profile modules (ids, validator, loader) load on demand: /fly's own JS stays at its budget.
   $effect(() => {
     const id = mission.id;
     deployProfile = null;
-    void import('$lib/fly/deploy-profile')
-      .then((d) => (d.hasDeployProfile(id) ? d.loadDeployProfile(id, fetch, base) : null))
+    void Promise.all([import('$lib/fly/deploy-profile'), import('$lib/fly/docking-profile')])
+      .then(([d, k]): Promise<AnyDeployProfile | DockingProfile | null> | null =>
+        d.hasDeployProfile(id)
+          ? d.loadDeployProfile(id, fetch, base)
+          : k.hasDockingProfile(id)
+            ? k.loadDockingProfile(id, fetch, base)
+            : null,
+      )
       .then((p) => {
         if (mission.id === id) deployProfile = p;
       })
@@ -817,8 +825,10 @@
   const wantDescentDeep =
     launchDeepParams?.get('descent') === '1' || launchDeepParams?.get('winged') === '1';
   const wantWayHomeDeep = launchDeepParams?.get('wayhome') === '1';
-  // ?deploy=1 (with ?launch=1): straight to the Shuttle deploy once its profile loads.
-  const wantDeployDeep = launchDeepParams?.get('deploy') === '1';
+  // ?deploy=1 (with ?launch=1): straight to the Shuttle deploy (or the docking, ?dock=1) once its
+  // profile loads.
+  const wantDeployDeep =
+    launchDeepParams?.get('deploy') === '1' || launchDeepParams?.get('dock') === '1';
   $effect(() => {
     if (wantDeployDeep && deployProfile != null && showLaunch && !deploying && !deployDone) {
       startDeploy();
@@ -3583,7 +3593,7 @@
 
 <!-- Launch pre-roll overlay (opt-in ?launch=1). Self-contained; dismisses to reveal the transfer scene. -->
 {#if showLaunch && deploying && deployProfile}
-  <!-- Only the Shuttle deploys play it: its scene loads on demand (route budget). -->
+  <!-- Only the Shuttle deploys and the dockings play it: its scene loads on demand (route budget). -->
   {#await import('$lib/components/DeployScene.svelte') then { default: DeployScene }}
     <DeployScene
       profile={deployProfile}

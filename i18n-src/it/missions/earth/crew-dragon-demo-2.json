@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour con 2 astronauti NASA: Douglas Hurley (comandante della navicella) e Robert Behnken (comandante delle operazioni congiunte)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VOLO DI PROVA COMMERCIAL CREW · COMPLETATO",
+  "first": "Il primo volo con equipaggio della Crew Dragon e il primo lancio con equipaggio in orbita dagli Stati Uniti dal 2011",
+  "description": "Douglas Hurley e Robert Behnken hanno portato la prima Crew Dragon con equipaggio, Endeavour, alla Stazione spaziale internazionale: il primo lancio con equipaggio in orbita dagli Stati Uniti dall'ultimo volo dello Shuttle nel 2011 e il primo volo con equipaggio su una navicella costruita e gestita commercialmente. Un Falcon 9 è decollato dal Launch Complex 39A il 30 maggio 2020 alle 19:22:45 UTC e il suo primo stadio è atterrato sulla nave drone Of Course I Still Love You. Il 31 maggio Dragon si è agganciata in modo autonomo alla porta anteriore del modulo Harmony, dopo che Hurley aveva assunto due volte il controllo manuale durante l'avvicinamento per provare a pilotare Dragon dai suoi touchscreen: cattura morbida alle 14:16 UTC, cattura salda alle 14:27, portello aperto alle 17:02. Hurley e Behnken sono entrati a far parte della Expedition 63 per 62 giorni. Si sono sganciati alle 23:35 UTC del 1° agosto e sono ammarati alle 18:48 UTC del 2 agosto nel Golfo del Messico al largo di Pensacola, in Florida, il primo ammaraggio di astronauti americani in 45 anni, dopo 64 giorni di volo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCIO",
+      "note": "Falcon 9 e Crew Dragon dal Launch Complex 39A, 30 maggio 2020, 19:22:45 UTC; il primo stadio è atterrato sulla nave drone Of Course I Still Love You.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "ACCENSIONE DI AVVICINAMENTO",
+      "note": "Verso le 12:11 UTC del 31 maggio, un'accensione di circa 90 secondi ha avviato l'avvicinamento alla stazione, dopo cinque accensioni di fasamento; l'orario è convertito da un resoconto secondario.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "CATTURA MORBIDA",
+      "note": "Dragon si aggancia alla porta di Harmony alle 14:16 UTC, a 262 mi (421 km) di quota sopra il confine tra Cina e Mongolia.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "CATTURA SALDA",
+      "note": "Dodici ganci si chiudono alle 14:27 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "PORTELLO APERTO",
+      "note": "Hurley e Behnken aprono il portello verso la stazione alle 17:02 UTC ed entrano nella Expedition 63.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "SGANCIO",
+      "note": "Dragon si sgancia da sola alle 23:35 UTC del 1° agosto.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "AMMARAGGIO",
+      "note": "18:48 UTC del 2 agosto nel Golfo del Messico al largo di Pensacola; la nave SpaceX GO Navigator recupera l'equipaggio.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Secondo stadio del Falcon 9"
+}

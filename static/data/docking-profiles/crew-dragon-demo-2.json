@@ -1,0 +1,90 @@
+{
+  "missionId": "crew-dragon-demo-2",
+  "flight": "Demo-2",
+  "chaser": "crew-dragon",
+  "target": "iss",
+  "port": "harmony-forward",
+  "stationDate": "2020-05-31",
+  "mechanism": "idss",
+  "launchZeroUtc": "2020-05-30T19:22:45Z",
+  "altitudeKm": 421,
+  "lastBurn": {
+    "id": "approach-initiation",
+    "met": "16:48:15.0",
+    "burnS": 90
+  },
+  "holds": [
+    {
+      "id": "wp0",
+      "rangeM": 400,
+      "from": "below"
+    },
+    {
+      "id": "wp1",
+      "rangeM": 220,
+      "from": "axis"
+    },
+    {
+      "id": "wp2",
+      "rangeM": 20,
+      "from": "axis",
+      "hold": true
+    }
+  ],
+  "captureMet": "18:53:15.0",
+  "hardDockMet": "19:04:15.0",
+  "neighbours": [
+    {
+      "id": "htv",
+      "port": "harmony-nadir"
+    }
+  ],
+  "source_tier": "flagship",
+  "estimatedFields": [
+    "the times at the three waypoints and the go/no-go hold (no flown times found; the scene spaces them before the capture as the pre-launch plan on Everyday Astronaut did: WP0 76 min, WP1 51 min, WP2 10 min before capture, the hold ending 4 min before)",
+    "the burn, capture and hard-capture times to the minute only (the NASA blog and AmericaSpace give hh:mm EDT); the burn's length is AmericaSpace's 'roughly 90 seconds'",
+    "Waypoints 1 and 2 on the docking axis ahead of the port (AmericaSpace gives their ranges, not their direction; not to be confused with the 220 m Wikipedia gives as the limit of Hurley's touchscreen flying); Waypoint 0 400 m below the station",
+    "the closing speed and the path between the waypoints (no flown figures found)",
+    "the nose cone's side and opening angle (the Everyday Astronaut Demo-2 timeline has its opening sequence start at T+00:12:48, 46 s after separation, without saying whether planned or flown: the scene shows it open throughout)",
+    "the docking system under the nose cone and the station away from the port end (the ISS is the /iss diagram model as of 31 May 2020, scaled to metres; only Harmony's forward end, PMA-2, IDA-2 and HTV-9 are drawn to their sourced sizes)",
+    "the ring's retraction between soft and hard capture (its travel)"
+  ],
+  "provenance": [
+    {
+      "l": "NASA Space Station blog, 31 May 2020: Crew Dragon docked at 10:16 a.m. EDT (soft capture) over the border of northern China and Mongolia, 262 miles above the Earth; hard capture at 10:27 a.m. EDT, 12 hooks closed",
+      "u": "https://www.nasa.gov/blogs/spacestation/2020/05/31/crew-dragon-docks-to-space-station/"
+    },
+    {
+      "l": "AmericaSpace, 31 May 2020: the roughly 90-second Approach Initiation burn at 8:11 a.m. EDT into the ISS Approach Ellipsoid; Waypoint Zero 1,300 ft (400 m) below the station, Waypoint One 720 ft (220 m), Waypoint Two 66 ft (20 m) with a go/no-go poll; Hurley took manual control a second time in close proximity; contact and capture with IDA-2 at the forward end of Harmony at 10:16 a.m. EDT",
+      "u": "https://www.americaspace.com/2020/05/31/demo-2-docks-at-space-station-expedition-63-expands-to-five-crew/"
+    },
+    {
+      "l": "NASA Space Station blog, 25 May 2020: HTV-9 installed on Harmony's Earth-facing port",
+      "u": "https://www.nasa.gov/blogs/spacestation/2020/05/25/japans-resupply-ship-installed-on-stations-harmony-module"
+    },
+    {
+      "l": "Harmony: 6.7 m long, 4.4 m across (Wikipedia, Harmony (ISS module))",
+      "u": "https://en.wikipedia.org/wiki/Harmony_(ISS_module)"
+    },
+    {
+      "l": "Pressurized Mating Adapter: 1.86 m (6.1 ft) long, 1.9 m (6.25 ft) at the wide end, 1.37 m (4.5 ft) at the narrow end (NASA, International Space Station elements reference, mirrored by the National Space Society)",
+      "u": "https://nss.org/wp-content/uploads/2017/07/ISS-International-Space-Station-03-Elements.pdf"
+    },
+    {
+      "l": "International Docking Adapter: 110 cm high, 160 cm wide (about 240 cm with the targets); IDA-2 on PMA-2 since 19 Aug 2016 (Wikipedia)",
+      "u": "https://en.wikipedia.org/wiki/International_Docking_Adapter"
+    },
+    {
+      "l": "HTV: 9.8 m long including the main thruster, 4.4 m across (JAXA)",
+      "u": "https://global.jaxa.jp/projects/rockets/htv/"
+    },
+    {
+      "l": "PMA-2 moved with Harmony to Harmony's final location, its forward port, in November 2007 (Canadarm2 put PMA-2 on Harmony's forward port on 12 Nov 2007; the pair moved two days later) (Wikipedia, Pressurized Mating Adapter)",
+      "u": "https://en.wikipedia.org/wiki/Pressurized_Mating_Adapter"
+    },
+    {
+      "l": "Everyday Astronaut, Demo-2 timeline: Dragon separates from the second stage at T+00:12:02, the nosecone opening sequence starts at T+00:12:48; the pre-launch planned times of the waypoints and capture",
+      "u": "https://everydayastronaut.com/dragon-2-dm-2-spacexs-first-crewed-mission/"
+    }
+  ]
+}

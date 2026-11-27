@@ -34,7 +34,7 @@
   ],
   "flights": [
     {
-      "mission_id": "demo-2",
+      "mission_id": "crew-dragon-demo-2",
       "flight_designation": "Demo-2 (2020-05-30) · first commercial human spaceflight",
       "crew": [
         {
@@ -127,6 +127,7 @@
     }
   ],
   "linked_missions": [
+    "crew-dragon-demo-2",
     "inspiration4",
     "polaris-dawn"
   ],

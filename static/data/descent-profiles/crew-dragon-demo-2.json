@@ -1,0 +1,48 @@
+{
+  "missionId": "crew-dragon-demo-2",
+  "siteId": "crew-dragon-demo-2",
+  "body": "earth",
+  "landingSite": {
+    "lat": 29.8,
+    "lon": -87.5
+  },
+  "entryState": {
+    "altitudeM": 122000,
+    "velocityMs": 7820,
+    "flightPathAngleDeg": 1.627
+  },
+  "entryMassKg": 7700,
+  "entryCdA": 15.5,
+  "liftToDragRatio": 0.18,
+  "targetDownrangeKm": 2900,
+  "estimatedFields": [
+    "landingSite",
+    "entryMassKg",
+    "entryCdA",
+    "targetDownrangeKm",
+    "flightPathAngleDeg",
+    "parachuteCdA"
+  ],
+  "archetype": "EARTH_CAPSULE_REENTRY",
+  "params": {
+    "chuteDeployAltM": 5490,
+    "terminalHandoffAltM": 1830,
+    "parachuteCdA": 19.1,
+    "terminalCdA": 1927
+  },
+  "source_tier": "flagship",
+  "provenance": [
+    {
+      "l": "NASA, Demo-2 return: Crew Dragon drogues at ~18,000 ft, mains at ~6,000 ft",
+      "u": "https://www.nasa.gov/feature/top-10-things-to-know-for-nasa-s-spacex-demo-2-return"
+    },
+    {
+      "l": "NASA: splashdown at 2:48 p.m. EDT, 2 Aug 2020, in the Gulf of Mexico off Pensacola, Florida; 64 days in orbit, 1,024 orbits. Estimated: the splashdown point (the release says only off Pensacola); the entry mass and Cd·A are the Inspiration4 profile's Crew Dragon figures",
+      "u": "https://www.nasa.gov/news-release/nasa-astronauts-safely-splash-down-after-first-commercial-crew-flight-to-space-station/"
+    },
+    {
+      "l": "Entry interface at 122 km and the entry angle as the Inspiration4 profile (the angle tuned for the US Standard Atmosphere 1976 table, 2026-11-25)",
+      "u": "https://www.pdas.com/bigtables.html"
+    }
+  ]
+}

@@ -3,6 +3,8 @@
   Ulysses, Chandra: the bay doors open, the IUS tilts up and springs out, the orbiter backs away, the
   IUS fires; three/fly-deploy-scene.ts) or the robotic arm's release (Hubble, Compton: the arm lifts
   the observatory out, its appendages deploy, it lets go; three/fly-rms-deploy-scene.ts).
+  It also plays the crewed dockings (W9: Demo-2 to the ISS; three/fly-docking-scene.ts), which take
+  the deploy's slot after the launch.
   Self-clocked in compressed scene time with the real MET on the HUD ("~" before the release, whose
   time is the first one sourced); Skip (or the end) fires `onComplete`, and /fly goes on.
 
@@ -23,13 +25,19 @@
     type DeployBeat,
   } from '$lib/three/fly-deploy-scene';
   import { rmsBeatsFor, rmsMetIsEstimate, type RmsBeat } from '$lib/three/fly-rms-deploy-scene';
+  import {
+    dockingBeatsFor,
+    dockingMetIsEstimate,
+    type DockingBeat,
+  } from '$lib/three/fly-docking-scene';
   import { formatGet } from '$lib/fly/return-profile';
   import { isRmsDeploy, type AnyDeployProfile } from '$lib/fly/deploy-profile';
+  import { isDockingProfile, type DockingProfile } from '$lib/fly/docking-profile';
   import { flyCraft, preloadFlyCraft } from '$lib/three/fly-craft';
   import { orbiterLook } from '$lib/three/showcase/orbiter-stance';
 
   interface Props {
-    profile: AnyDeployProfile;
+    profile: AnyDeployProfile | DockingProfile;
     missionName: string;
     hudHidden?: boolean;
     onComplete?: () => void;
@@ -55,7 +63,22 @@
   let pose = $state<{ t: number; met: number; beat: string } | null>(null);
 
   const tiltDeg = (last: boolean) =>
-    isRmsDeploy(profile) ? '' : String(profile.tilt[last ? profile.tilt.length - 1 : 0].deg);
+    isDockingProfile(profile) || isRmsDeploy(profile)
+      ? ''
+      : String(profile.tilt[last ? profile.tilt.length - 1 : 0].deg);
+  const holdM = (id: string) =>
+    isDockingProfile(profile) ? String(profile.holds.find((h) => h.id === id)?.rangeM ?? '') : '';
+  const dockLabel: Record<DockingBeat, () => string> = {
+    establish: m.fly_docking_beat_establish,
+    burn: m.fly_docking_beat_burn,
+    wp0: () => m.fly_docking_beat_wp0({ m: holdM('wp0') }),
+    wp1: () => m.fly_docking_beat_wp1({ m: holdM('wp1') }),
+    wp2: () => m.fly_docking_beat_wp2({ m: holdM('wp2') }),
+    hold: m.fly_docking_beat_hold,
+    final: m.fly_docking_beat_final,
+    capture: m.fly_docking_beat_capture,
+    hardDock: m.fly_docking_beat_hard_dock,
+  };
   const rmsLabel: Record<RmsBeat, () => string> = {
     establish: m.fly_deploy_rms_establish,
     grapple: m.fly_deploy_rms_grapple,
@@ -83,10 +106,25 @@
     pamS: m.fly_deploy_beat_pam,
   };
   const beatText = (beat: string): string =>
-    isRmsDeploy(profile) ? rmsLabel[beat as RmsBeat]() : iusLabel[beat as DeployBeat]();
-  const beats = $derived(isRmsDeploy(profile) ? rmsBeatsFor(profile) : beatsFor(profile));
+    isDockingProfile(profile)
+      ? dockLabel[beat as DockingBeat]()
+      : isRmsDeploy(profile)
+        ? rmsLabel[beat as RmsBeat]()
+        : iusLabel[beat as DeployBeat]();
+  const beats = $derived(
+    isDockingProfile(profile)
+      ? dockingBeatsFor()
+      : isRmsDeploy(profile)
+        ? rmsBeatsFor(profile)
+        : beatsFor(profile),
+  );
   const estimate = (t: number) =>
-    isRmsDeploy(profile) ? rmsMetIsEstimate(t, profile) : metIsEstimate(t);
+    isDockingProfile(profile)
+      ? dockingMetIsEstimate(t)
+      : isRmsDeploy(profile)
+        ? rmsMetIsEstimate(t, profile)
+        : metIsEstimate(t);
+  const title = () => (isDockingProfile(profile) ? m.fly_docking_title() : m.fly_deploy_title());
   const metText = $derived(pose ? `${estimate(pose.t) ? '~' : ''}${formatGet(pose.met)}` : '');
   const progressPct = $derived(Math.min(100, (t / end) * 100));
   const fade = $derived(Math.max(0, Math.min(1, (t - (end - 1.5)) / 1.5)));
@@ -102,8 +140,28 @@
     let stop: (() => void) | undefined;
     const earthTextureUrl = `${base}/textures/2k_earth_daymap.jpg`;
     const p = profile;
+    // The models load on demand: /fly's first load stays free of them.
+    if (isDockingProfile(p)) {
+      void Promise.all([
+        import('$lib/iss-proxy-model'),
+        import('$lib/three/showcase/capsules-commercial'),
+        import('$lib/three/fly-docking-scene'),
+        import('$lib/ar/ar-assembly').then((a) => a.loadStationEpochs('iss')),
+      ]).then(([iss, caps, dock, epochs]) => {
+        if (unmounted) return;
+        const d = dock.createFlyDocking(
+          p,
+          { station: iss.buildIssProxyStation(), chaser: caps.SHOWCASE[p.chaser].build() },
+          { earthTextureUrl, epochs },
+        );
+        stop = start(d);
+      });
+      return () => {
+        unmounted = true;
+        stop?.();
+      };
+    }
     const look = orbiterLook(p.orbiter, p.launchZeroUtc);
-    // The orbiter, the stages and the payload load on demand: /fly's first load stays free of them.
     if (isRmsDeploy(p)) {
       void Promise.all([
         import('$lib/three/showcase/winged'),
@@ -218,7 +276,7 @@
   class:hud-hidden={hudHidden}
   data-testid="deploy-scene"
   role="region"
-  aria-label={m.fly_deploy_title()}
+  aria-label={title()}
 >
   <div class="stage" bind:this={container}></div>
   <div class="scrim" aria-hidden="true"></div>
@@ -227,7 +285,7 @@
     <div class="mission">
       {missionName}{missionName.includes(profile.flight) ? '' : ` · ${profile.flight}`}
     </div>
-    <div class="sub"><span class="live-dot"></span>{m.fly_deploy_title()}</div>
+    <div class="sub"><span class="live-dot"></span>{title()}</div>
   </div>
   <div class="clock">
     <span class="met-label">{m.fly_hud_met()}</span><span class="met" data-testid="deploy-met"

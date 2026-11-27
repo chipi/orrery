@@ -1,4 +1,9 @@
 {
+  "ar|missions/earth/crew-dragon-demo-2.json|payload": {
+    "why": "\"2 NASA astronauts\" is the Arabic dual \"رائدا فضاء\" (two astronauts): the number is the grammatical form, not a digit",
+    "en": "049c8cad76",
+    "tr": "69aaf39497"
+  },
   "ar|missions/earth/starship-flight-5.json|events.4.note": {
     "why": "\"1 h 5 min\" is \"ساعة و5 دقائق\" (an hour and 5 minutes): the one is the word \"ساعة\"",
     "en": "7ee63315ba",

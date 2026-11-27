@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour con 2 astronautas de la NASA: Douglas Hurley (comandante de la nave) y Robert Behnken (comandante de operaciones conjuntas)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "VUELO DE PRUEBA COMMERCIAL CREW · REALIZADO",
+  "first": "El primer vuelo tripulado de la Crew Dragon y el primer lanzamiento tripulado a órbita desde Estados Unidos desde 2011",
+  "description": "Douglas Hurley y Robert Behnken llevaron la primera Crew Dragon tripulada, Endeavour, a la Estación Espacial Internacional: el primer lanzamiento tripulado a órbita desde Estados Unidos desde el último vuelo del transbordador en 2011 y el primer vuelo tripulado en una nave espacial construida y operada comercialmente. Un Falcon 9 despegó del Launch Complex 39A el 30 de mayo de 2020 a las 19:22:45 UTC, y su primera etapa aterrizó en el barco-dron Of Course I Still Love You. El 31 de mayo Dragon se acopló de forma autónoma en el puerto delantero del módulo Harmony, después de que Hurley tomara dos veces el control manual durante la aproximación para probar el vuelo de Dragon desde sus pantallas táctiles: captura blanda a las 14:16 UTC, captura firme a las 14:27 y escotilla abierta a las 17:02. Hurley y Behnken se unieron a la Expedición 63 durante 62 días. Se desacoplaron el 1 de agosto a las 23:35 UTC y amerizaron el 2 de agosto a las 18:48 UTC en el golfo de México, frente a Pensacola, Florida, el primer amerizaje de astronautas estadounidenses en 45 años, tras 64 días de vuelo.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANZAMIENTO",
+      "note": "Falcon 9 y Crew Dragon desde el Launch Complex 39A, 30 de mayo de 2020, 19:22:45 UTC; la primera etapa aterrizó en el barco-dron Of Course I Still Love You.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "ENCENDIDO DE APROXIMACIÓN",
+      "note": "Hacia las 12:11 UTC del 31 de mayo, un encendido de unos 90 segundos inició la aproximación a la estación, tras cinco encendidos de fase; la hora se ha convertido de un relato secundario.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "CAPTURA BLANDA",
+      "note": "Dragon se acopla al puerto de Harmony a las 14:16 UTC, a 262 mi (421 km) de altura sobre la frontera entre China y Mongolia.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "CAPTURA FIRME",
+      "note": "Doce ganchos se cierran a las 14:27 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "ESCOTILLA ABIERTA",
+      "note": "Hurley y Behnken abren la escotilla hacia la estación a las 17:02 UTC y se unen a la Expedición 63.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "DESACOPLAMIENTO",
+      "note": "Dragon se desacopla por sí sola a las 23:35 UTC del 1 de agosto.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "AMERIZAJE",
+      "note": "18:48 UTC del 2 de agosto en el golfo de México, frente a Pensacola; el barco de SpaceX GO Navigator recoge a la tripulación.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Segunda etapa del Falcon 9"
+}

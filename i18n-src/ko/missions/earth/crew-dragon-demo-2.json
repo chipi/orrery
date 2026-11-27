@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "NASA 우주비행사 2명이 탄 Crew Dragon Endeavour: 더글러스 헐리(우주선 선장)와 로버트 벤켄(합동 운용 지휘관)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "상업 승무원 수송 시험 비행 · 비행 완료",
+  "first": "유인 Crew Dragon의 첫 비행이자, 2011년 이후 미국에서 유인으로 궤도에 쏘아 올린 첫 발사",
+  "description": "더글러스 헐리와 로버트 벤켄은 첫 유인 Crew Dragon인 Endeavour를 타고 국제우주정거장으로 갔다. 2011년 마지막 우주왕복선 비행 이후 미국에서 유인으로 궤도에 쏘아 올린 첫 발사이자 민간이 제작·운용하는 우주선으로 한 첫 유인 비행이다. Falcon 9은 2020년 5월 30일 19:22:45 UTC에 Launch Complex 39A에서 이륙했고, 1단은 무인선 Of Course I Still Love You에 착륙했다. 5월 31일 Dragon은 Harmony 모듈의 전방 포트에 자율적으로 도킹했다. 접근 중에는 헐리가 두 차례 수동 조종으로 전환해 터치스크린으로 Dragon을 조종하는 시험을 했다. 소프트 캡처는 14:16 UTC, 하드 캡처는 14:27, 해치 개방은 17:02였다. 헐리와 벤켄은 62일 동안 제63차 장기체류에 합류했다. 8월 1일 23:35 UTC에 도킹을 해제하고, 8월 2일 18:48 UTC에 플로리다주 펜서콜라 앞 멕시코만에 착수했다. 미국 우주비행사의 착수는 45년 만이며, 비행은 64일이었다.",
+  "events": [
+    {
+      "met": 0,
+      "label": "발사",
+      "note": "Launch Complex 39A에서 Falcon 9과 Crew Dragon, 2020년 5월 30일 19:22:45 UTC. 1단은 무인선 Of Course I Still Love You에 착륙.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "접근 연소",
+      "note": "5월 31일 12:11 UTC경 약 90초의 연소로, 위상 조정 연소 다섯 번 뒤에 정거장으로의 접근이 시작됐다. 시각은 이차 자료에서 환산한 값이다.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "소프트 캡처",
+      "note": "Dragon이 14:16 UTC에 Harmony 포트에 도킹. 중국과 몽골 국경 상공 262마일(421 km) 높이.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "하드 캡처",
+      "note": "14:27 UTC에 갈고리 열두 개가 닫힌다.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "해치 개방",
+      "note": "17:02 UTC에 헐리와 벤켄이 정거장으로 통하는 해치를 열고 제63차 장기체류에 합류한다.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "도킹 해제",
+      "note": "8월 1일 23:35 UTC, Dragon이 스스로 도킹을 해제한다.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "착수",
+      "note": "8월 2일 18:48 UTC, 펜서콜라 앞 멕시코만. SpaceX 선박 GO Navigator가 승무원을 건져 올린다.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 2단"
+}

@@ -3,7 +3,11 @@
   "name": "Falcon 9 Block 5",
   "source_tier": "flagship",
   "payloadKg": 15000,
-  "payloadSeparationDelayByMissionS": { "inspiration4": 198, "polaris-dawn": 197 },
+  "payloadSeparationDelayByMissionS": {
+    "inspiration4": 198,
+    "polaris-dawn": 197,
+    "crew-dragon-demo-2": 199
+  },
   "recovery": [{ "part": "booster", "outcome": "landed" }],
   "recoveryByMission": {
     "hera": [{ "part": "booster", "outcome": "expended" }],
@@ -27,6 +31,17 @@
         "landingBurnS": 544,
         "touchdownS": 571,
         "timeClass": "sourced"
+      }
+    ],
+    "crew-dragon-demo-2": [
+      {
+        "part": "booster",
+        "outcome": "landed",
+        "site": "droneship",
+        "siteNames": ["Of Course I Still Love You"],
+        "entryBurnS": 432,
+        "touchdownS": 549,
+        "timeClass": "approx"
       }
     ],
     "polaris-dawn": [

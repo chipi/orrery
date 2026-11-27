@@ -180,7 +180,9 @@ async function main() {
     await new Promise((r) => setTimeout(r, 1200));
     browser = await chromium.launch();
     const ctx = await browser.newContext({
-      viewport: { width: 480, height: 720 },
+      // Tall enough for the tallest card (~700 CSS px): a card that overflows the viewport is
+      // scrolled into view for the element screenshot, and the site header then paints over its top.
+      viewport: { width: 480, height: 1100 },
       deviceScaleFactor: 3,
     });
     const pg = await ctx.newPage();

@@ -62,14 +62,19 @@ describe('fleetMissionRows over the fleet data', () => {
     expect(off).toEqual([]);
   });
 
-  it('Crew Dragon: 5 rows, 2 with a mission, in date order', () => {
+  it('Crew Dragon: 5 rows, 3 with a mission, in date order', () => {
     const rows = rowsOf(byId('crew-dragon'));
     expect(rows).toHaveLength(5);
     expect(linked(byId('crew-dragon')).map((r) => r.missionId)).toEqual([
+      'crew-dragon-demo-2',
       'inspiration4',
       'polaris-dawn',
     ]);
-    expect(rows.map((r) => r.key).slice(0, 3)).toEqual(['demo-2', 'crew-1', 'inspiration4']);
+    expect(rows.map((r) => r.key).slice(0, 3)).toEqual([
+      'crew-dragon-demo-2',
+      'crew-1',
+      'inspiration4',
+    ]);
   });
 
   it('Gemini: 10 rows, 6 with a mission', () => {
@@ -85,11 +90,16 @@ describe('fleetMissionRows over the fleet data', () => {
   });
 
   it('a row without a mission is plain text: the designation, the crew as names', () => {
-    const demo = rowsOf(byId('crew-dragon')).find((r) => r.key === 'demo-2')!;
-    expect(demo.missionId).toBeNull();
-    expect(demo.title).toBe('Demo-2 (2020-05-30)');
-    expect(demo.sub).toBe('first commercial human spaceflight');
-    expect(demo.crew).toEqual(['Doug Hurley', 'Bob Behnken']);
+    const crew1 = rowsOf(byId('crew-dragon')).find((r) => r.key === 'crew-1')!;
+    expect(crew1.missionId).toBeNull();
+    expect(crew1.title).toBe('Crew-1 (2020-11-15)');
+    expect(crew1.sub).toBe('first operational mission');
+    expect(crew1.crew).toEqual([
+      'Michael Hopkins',
+      'Victor Glover',
+      'Shannon Walker',
+      'Soichi Noguchi',
+    ]);
   });
 
   it('a row with a mission carries the mission name and its year, and the flight crew', () => {

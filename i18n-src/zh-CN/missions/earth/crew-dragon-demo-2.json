@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "搭载 2 名 NASA 航天员的 Crew Dragon Endeavour：道格拉斯·赫尔利（飞船指令长）与罗伯特·本肯（联合行动指挥官）",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "商业载人试飞 · 已飞行",
+  "first": "首次载人的 Crew Dragon 飞行，也是自 2011 年以来美国首次载人进入轨道的发射",
+  "description": "道格拉斯·赫尔利和罗伯特·本肯乘首艘载人的 Crew Dragon “Endeavour” 前往国际空间站：这是自 2011 年航天飞机最后一次飞行以来美国首次载人进入轨道的发射，也是首次乘坐商业建造并运营的飞船载人飞行。Falcon 9 于 2020 年 5 月 30 日 19:22:45 UTC 从 Launch Complex 39A 升空，其一级降落在无人驳船 Of Course I Still Love You 上。5 月 31 日，Dragon 自主完成对接，停靠在 Harmony 舱的前向端口；接近期间，赫尔利两次切换为手动控制，通过触摸屏测试驾驶 Dragon：软捕获在 14:16 UTC，硬捕获在 14:27，舱门于 17:02 打开。赫尔利和本肯加入第 63 长期考察组，共 62 天。他们于 8 月 1 日 23:35 UTC 解除对接，并于 8 月 2 日 18:48 UTC 在佛罗里达州彭萨科拉近海的墨西哥湾溅落，这是美国航天员 45 年来的首次溅落，全程飞行 64 天。",
+  "events": [
+    {
+      "met": 0,
+      "label": "发射",
+      "note": "Falcon 9 与 Crew Dragon 自 Launch Complex 39A 发射，2020年5月30日19:22:45 UTC；一级降落于无人驳船 Of Course I Still Love You。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "接近点火",
+      "note": "5 月 31 日约 12:11 UTC，在五次相位调整点火之后，一次约 90 秒的点火开启了向空间站的接近；时间由二手资料换算而来。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "软捕获",
+      "note": "Dragon 于 14:16 UTC 与 Harmony 的端口对接，当时位于中国与蒙古边境上空 262 英里（421 km）处。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "硬捕获",
+      "note": "14:27 UTC，十二个钩锁闭合。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "舱门打开",
+      "note": "17:02 UTC，赫尔利和本肯打开通往空间站的舱门，加入第 63 长期考察组。",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "解除对接",
+      "note": "8 月 1 日 23:35 UTC，Dragon 自主解除对接。",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "溅落",
+      "note": "8 月 2 日 18:48 UTC，在彭萨科拉近海的墨西哥湾；SpaceX 的 GO Navigator 号船接回乘组。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9 二级"
+}

@@ -315,6 +315,18 @@ const COASTS: Record<string, EarthOrbitCoast> = {
     revolutions: 47,
     coastDurationS: 250000,
   },
+  'crew-dragon-demo-2': {
+    // Demo-2 at the ISS: 421 km at the docking (NASA blog, 262 mi), 51.6 deg; launch to splashdown,
+    // 30 May 19:22:45 to 2 Aug 2020 18:48 UTC; 1,024 orbits (NASA splashdown release). The apogee/perigee split is
+    // an estimate.
+    missionId: 'crew-dragon-demo-2',
+    capsuleId: 'dragon',
+    apogeeKm: 423,
+    perigeeKm: 418,
+    inclinationDeg: 51.6,
+    revolutions: 1024,
+    coastDurationS: 5527515,
+  },
   'polaris-dawn': {
     missionId: 'polaris-dawn',
     capsuleId: 'dragon',

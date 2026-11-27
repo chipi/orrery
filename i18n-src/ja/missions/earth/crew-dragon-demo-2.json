@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "NASA宇宙飛行士2名を乗せたCrew Dragon Endeavour：ダグラス・ハーリー（宇宙船船長）とロバート・ベンケン（共同運用指揮官）",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "商業乗員輸送の試験飛行 · 飛行済み",
+  "first": "有人Crew Dragon初の飛行であり、2011年以来、米国から有人で軌道へ打ち上げた初の例",
+  "description": "ダグラス・ハーリーとロバート・ベンケンは、有人としては初のCrew Dragon「Endeavour」で国際宇宙ステーションへ向かった。2011年のスペースシャトル最終飛行以来、米国から有人で軌道へ打ち上げた初の例であり、民間が建造・運用する宇宙船による初の有人飛行でもある。Falcon 9は2020年5月30日19:22:45 UTCにLaunch Complex 39Aから離昇し、第1段は無人船Of Course I Still Love Youに着陸した。5月31日、ドッキング自体はDragonが自律的に行い、Harmonyモジュールの前方ポートに結合した。接近中にはハーリーが2度手動操縦に切り替え、タッチスクリーンからDragonを操縦する試験を行った。ソフトキャプチャは14:16 UTC、ハードキャプチャは14:27、ハッチ開放は17:02だった。ハーリーとベンケンは62日間、第63次長期滞在に加わった。8月1日23:35 UTCにドッキングを解除し、8月2日18:48 UTCにフロリダ州ペンサコーラ沖のメキシコ湾に着水した。米国の宇宙飛行士の着水は45年ぶりで、飛行は64日間だった。",
+  "events": [
+    {
+      "met": 0,
+      "label": "打ち上げ",
+      "note": "Launch Complex 39AからFalcon 9とCrew Dragon、2020年5月30日19:22:45 UTC。第1段は無人船Of Course I Still Love Youに着陸。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "接近の噴射",
+      "note": "5月31日の12:11 UTC頃、約90秒の噴射で、5回の位相調整噴射のあと、ステーションへの接近が始まった。時刻は二次的な記述から換算したもの。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "ソフトキャプチャ",
+      "note": "Dragonが14:16 UTCにHarmonyのポートへドッキング。高度262マイル（421 km）、中国とモンゴルの国境の上空。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "ハードキャプチャ",
+      "note": "14:27 UTCに12個のフックが閉じる。",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "ハッチ開放",
+      "note": "17:02 UTCにハーリーとベンケンがステーションへのハッチを開け、第63次長期滞在に加わる。",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "ドッキング解除",
+      "note": "8月1日23:35 UTC、Dragonが自力でドッキングを解除。",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "着水",
+      "note": "8月2日18:48 UTC、ペンサコーラ沖のメキシコ湾。SpaceXの船GO Navigatorが乗員を収容。",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Falcon 9第2段"
+}

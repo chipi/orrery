@@ -400,6 +400,9 @@ export function addDeployBackdrop(
   scene: THREE.Scene,
   orbitNmi: [number, number],
   earthTextureUrl?: string,
+  /** The Earth's scale: the deploys stay within ~100 m of the origin; a docking spans a kilometre
+   *  and needs the Earth farther below (the horizon's dip does not depend on the scale). */
+  earthScale = EARTH_SCALE,
 ): { stars: THREE.Points; earthTex: THREE.Texture | null } {
   scene.background = new THREE.Color(0x000000);
   const sun = new THREE.DirectionalLight(0xfff6ea, 3.4);
@@ -435,8 +438,8 @@ export function addDeployBackdrop(
     earthTex.colorSpace = THREE.SRGBColorSpace;
     earthMat.map = earthTex;
   }
-  const earth = new THREE.Mesh(new THREE.SphereGeometry(EARTH_R_M * EARTH_SCALE, 96, 64), earthMat);
-  earth.position.set(0, -(EARTH_R_M + altM) * EARTH_SCALE, 0);
+  const earth = new THREE.Mesh(new THREE.SphereGeometry(EARTH_R_M * earthScale, 96, 64), earthMat);
+  earth.position.set(0, -(EARTH_R_M + altM) * earthScale, 0);
   earth.rotation.set(0.4, 1.2, 0);
   scene.add(earth);
   return { stars, earthTex };

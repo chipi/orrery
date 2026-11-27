@@ -1510,5 +1510,15 @@
     "sector": "gov",
     "color": "#de2910",
     "crewed": true
+  },
+  {
+    "id": "crew-dragon-demo-2",
+    "agency": "NASA / SpaceX",
+    "dest": "EARTH",
+    "status": "FLOWN",
+    "year": 2020,
+    "sector": "gov",
+    "color": "#0B3D91",
+    "crewed": true
   }
 ]

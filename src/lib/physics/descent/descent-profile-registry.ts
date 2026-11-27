@@ -734,6 +734,7 @@ export const DESCENT_MISSION_IDS = new Set<string>([
   'soyuz-11',
   'inspiration4',
   'polaris-dawn',
+  'crew-dragon-demo-2',
   'starship-flight-5', // Starship's belly-first return, landing flip and burn (0.9.11 F3)
   'shenzhou-1',
 ]);

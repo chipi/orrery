@@ -1,0 +1,54 @@
+{
+  "name": "Crew Dragon Demo-2",
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour met 2 NASA-astronauten: Douglas Hurley (commandant van het ruimteschip) en Robert Behnken (commandant van de gezamenlijke operaties)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "type": "TESTVLUCHT COMMERCIAL CREW · GEVLOGEN",
+  "first": "De eerste bemande vlucht van de Crew Dragon en de eerste bemande lancering naar een baan om de aarde vanuit de Verenigde Staten sinds 2011",
+  "description": "Douglas Hurley en Robert Behnken vlogen met de eerste bemande Crew Dragon, Endeavour, naar het Internationaal Ruimtestation: de eerste bemande lancering naar een baan om de aarde vanuit de Verenigde Staten sinds de laatste Shuttlevlucht in 2011, en de eerste bemande vlucht met een commercieel gebouwd en geëxploiteerd ruimteschip. Een Falcon 9 steeg op 30 mei 2020 om 19:22:45 UTC op van Launch Complex 39A en de eerste trap landde op het droneschip Of Course I Still Love You. Op 31 mei koppelde Dragon zelfstandig aan de voorste poort van de module Harmony aan, nadat Hurley tijdens de nadering twee keer de handbediening had overgenomen om het vliegen met Dragon via de touchscreens te testen: zachte vangst om 14:16 UTC, harde vangst om 14:27, luik open om 17:02. Hurley en Behnken sloten zich 62 dagen aan bij Expeditie 63. Ze koppelden op 1 augustus om 23:35 UTC af en maakten op 2 augustus om 18:48 UTC een waterlanding in de Golf van Mexico voor de kust van Pensacola, Florida, de eerste waterlanding van Amerikaanse astronauten in 45 jaar, na 64 dagen vlucht.",
+  "events": [
+    {
+      "met": 0,
+      "label": "LANCERING",
+      "note": "Falcon 9 en Crew Dragon van Launch Complex 39A, 30 mei 2020, 19:22:45 UTC; de eerste trap landde op het droneschip Of Course I Still Love You.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7002,
+      "label": "NADERINGSONTSTEKING",
+      "note": "Rond 12:11 UTC op 31 mei begon een ontsteking van ongeveer 90 seconden de nadering van het station, na vijf faseringsontstekingen; de tijd is omgerekend uit een secundair verslag.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.787,
+      "label": "ZACHTE VANGST",
+      "note": "Dragon koppelt om 14:16 UTC aan bij de poort van Harmony, 262 mi (421 km) hoog boven de grens tussen China en Mongolië.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.7946,
+      "label": "HARDE VANGST",
+      "note": "Twaalf haken sluiten om 14:27 UTC.",
+      "type": "nominal"
+    },
+    {
+      "met": 0.9023,
+      "label": "LUIK OPEN",
+      "note": "Hurley en Behnken openen om 17:02 UTC het luik naar het station en sluiten zich aan bij Expeditie 63.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.1752,
+      "label": "AFKOPPELEN",
+      "note": "Dragon koppelt op 1 augustus om 23:35 UTC zelfstandig af.",
+      "type": "nominal"
+    },
+    {
+      "met": 63.9758,
+      "label": "WATERLANDING",
+      "note": "18:48 UTC op 2 augustus in de Golf van Mexico voor de kust van Pensacola; het SpaceX-schip GO Navigator haalt de bemanning op.",
+      "type": "nominal"
+    }
+  ],
+  "vehicle_stage": "Tweede trap van de Falcon 9"
+}

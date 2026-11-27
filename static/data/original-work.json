@@ -2142,6 +2142,12 @@
       "cover": false
     },
     {
+      "title": "Crew Dragon Demo-2",
+      "file": "/images/missions/thumbnails/crew-dragon-demo-2.webp",
+      "route": "/missions?id=crew-dragon-demo-2",
+      "cover": false
+    },
+    {
       "title": "Curiosity",
       "file": "/images/missions/thumbnails/curiosity.webp",
       "route": "/missions?id=curiosity",
@@ -5693,7 +5699,7 @@
     "exploded_art": 76,
     "landing_art": 39,
     "blueprint_art": 18,
-    "mission_trajectories": 150,
+    "mission_trajectories": 151,
     "site_illustrations": 16,
     "lab_illustrations": 25,
     "diagrams_science": 117,

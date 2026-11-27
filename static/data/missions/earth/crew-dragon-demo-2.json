@@ -1,0 +1,103 @@
+{
+  "id": "crew-dragon-demo-2",
+  "agency": "NASA / SpaceX",
+  "agency_full": "National Aeronautics and Space Administration / Space Exploration Technologies Corp (NASA Commercial Crew Program test flight)",
+  "sector": "gov",
+  "dest": "EARTH",
+  "color": "#0B3D91",
+  "year": 2020,
+  "status": "FLOWN",
+  "departure_date": "2020-05-30",
+  "arrival_date": "2020-08-02",
+  "transit_days": 64,
+  "round_trip": true,
+  "vehicle": "Falcon 9 Block 5 (B1058.1) + Crew Dragon C206 (Endeavour)",
+  "payload": "Crew Dragon Endeavour with 2 NASA astronauts: Douglas Hurley (spacecraft commander) and Robert Behnken (joint operations commander)",
+  "delta_v": "~9.4 km/s (LEO)",
+  "data_quality": "good",
+  "credit": "Sources: NASA news releases and Space Station blog posts (launch, docking and hatch times, crew roles, undocking, splashdown), AmericaSpace (the approach-initiation burn, 12:11 UTC converted from 8:11 am EDT; Hurley's two manual-control tests during the approach), Wikipedia (capsule and booster serials, the recovery ship, the forward port of Harmony). Times are UTC; the 64-day figure is NASA's, the exact flight was 63 d 23 h 25 min. Not in the sources used: closing speeds, burn sizes and the manual-control hand-off ranges of the actual flight. Public domain / archive.",
+  "links": [
+    {
+      "l": "Crew Dragon Demo-2 — Wikipedia",
+      "u": "https://en.wikipedia.org/wiki/Crew_Dragon_Demo-2",
+      "t": "intro"
+    },
+    {
+      "l": "NASA astronauts launch from America in historic test flight of SpaceX Crew Dragon",
+      "u": "https://www.nasa.gov/news-release/nasa-astronauts-launch-from-america-in-historic-test-flight-of-spacex-crew-dragon/",
+      "t": "core"
+    },
+    {
+      "l": "Crew Dragon docks to space station — NASA Space Station blog",
+      "u": "https://www.nasa.gov/blogs/spacestation/2020/05/31/crew-dragon-docks-to-space-station/",
+      "t": "core"
+    },
+    {
+      "l": "Commercial crew astronauts join Expedition 63 — NASA Space Station blog",
+      "u": "https://www.nasa.gov/blogs/spacestation/2020/05/30/commercial-crew-astronauts-join-expedition-63",
+      "t": "deep"
+    },
+    {
+      "l": "NASA broadcasts first splashdown of American astronauts in 45 years",
+      "u": "https://www.nasa.gov/news-release/nasa-broadcasts-first-splashdown-of-american-astronauts-in-45-years/",
+      "t": "deep"
+    }
+  ],
+  "flight_data_quality": "sparse",
+  "fleet_refs": [
+    {
+      "id": "falcon-9",
+      "role": "launcher"
+    },
+    {
+      "id": "crew-dragon",
+      "role": "spacecraft"
+    },
+    {
+      "id": "iss",
+      "role": "station"
+    },
+    {
+      "id": "lc-39a",
+      "role": "launch-site"
+    }
+  ],
+  "flight": {
+    "launch": {
+      "vehicle_stage": "Falcon 9 second stage",
+      "source": "NASA release and Space Station blog: launch at 3:22 p.m. EDT on 30 May 2020 from Launch Complex 39A. Wikipedia (Crew Dragon Demo-2): the first stage, B1058, landed on the drone ship Of Course I Still Love You"
+    },
+    "events": [
+      {
+        "met_days": 0,
+        "type": "launch",
+        "label": "Launch — Falcon 9 and Crew Dragon from LC-39A",
+        "description": "30 May 2020 at 19:22:45 UTC (3:22 p.m. EDT) from Launch Complex 39A: the first crewed orbital launch from the United States since the last Shuttle flight in 2011, and the first crewed flight on a commercially built and operated spacecraft. Douglas Hurley was spacecraft commander and Robert Behnken joint operations commander."
+      },
+      {
+        "met_days": 0.7002,
+        "type": "phasing",
+        "label": "Approach-initiation burn",
+        "description": "About 12:11 UTC (8:11 a.m. EDT) on 31 May, after five phasing burns over roughly 19 hours, a burn of about 90 seconds put Dragon on the approach path to Waypoint 0, 400 m from the station. The time is converted from the AmericaSpace account, which is not a NASA page."
+      },
+      {
+        "met_days": 0.787,
+        "type": "arrival",
+        "label": "Soft capture at Harmony — Dragon docks to the ISS",
+        "description": "Soft capture at 14:16 UTC (10:16 a.m. EDT) on 31 May, with the station and Dragon about 262 miles over the border of China and Mongolia. Twelve hooks closed for hard capture at 14:27 UTC. The hatch between the station and Dragon Endeavour was first opened at 17:02 UTC (1:02 p.m. EDT)."
+      },
+      {
+        "met_days": 63.1752,
+        "type": "separation",
+        "label": "Undocking from the station",
+        "description": "Dragon undocked autonomously at 23:35 UTC (7:35 p.m. EDT) on 1 August 2020, ending 62 days docked to the station."
+      },
+      {
+        "met_days": 63.9758,
+        "type": "earth_return",
+        "label": "Splashdown in the Gulf of Mexico",
+        "description": "Splashdown at 18:48 UTC (2:48 p.m. EDT) on 2 August 2020 in the Gulf of Mexico off Pensacola, Florida, the first splashdown of American astronauts in 45 years. The crew was picked up by the SpaceX recovery ship GO Navigator."
+      }
+    ]
+  }
+}
